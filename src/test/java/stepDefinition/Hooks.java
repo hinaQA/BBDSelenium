@@ -1,9 +1,10 @@
 package stepDefinition;
 
-import org.junit.After;
-import org.junit.Before;
+
 
 import cucumber.TestContext;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 
 public class Hooks {
 	  TestContext testContext;

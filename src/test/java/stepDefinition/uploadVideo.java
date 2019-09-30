@@ -1,13 +1,12 @@
 package stepDefinition;
 
-import org.openqa.selenium.WebDriver;
-
 import cucumber.TestContext;
 import cucumber.api.java.en.*;
+import util.SeleniumUtil;
 
 public class uploadVideo
 {
-	private WebDriver driver;
+	//private WebDriver driver;
     TestContext testContext;
 
     public uploadVideo(TestContext context)
@@ -18,20 +17,23 @@ public class uploadVideo
     @Given("^Login using gmail account$")
     public void login_using_gmail_account() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	
-    	testContext.getAuth().openbrowser();
-        testContext.getAuth().opensite();
+    	SeleniumUtil.loginInToGmail(testContext);
     }
 
     @When("^Go to upload video section$")
     public void go_to_upload_video_section() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+    	testContext.getAuth().implictWait();
+    	testContext.getAuth().getYouTubePage().clickOnCreate();
+    	testContext.getAuth().getYouTubePage().clickOnUploadVideo();
         
     }
 
     @When("^Upload a video$")
     public void upload_a_video() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+    	testContext.getAuth().implictWait();
+    	testContext.getAuth().getYouTubePage().clickOnUploadFile();
         
     }
 

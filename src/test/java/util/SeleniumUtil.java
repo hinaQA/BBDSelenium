@@ -1,20 +1,22 @@
 package util;
 
+import org.openqa.selenium.WebDriver;
+
 import cucumber.TestContext;
+import dataProvider.ConfigFileReader;
 
 public class SeleniumUtil 
 {
-
+    public static ConfigFileReader configFileReader = new ConfigFileReader(); 
 	
-	public static void loginInToGmail(TestContext testContext,String username,String password)
+	public static void loginInToGmail(TestContext testContext)
     {
-       testContext.getAuth().opensite();
-       /*
-        testContext.getAuth().getHomePage().clickOnSign();
-        testContext.getAuth().getLoginPage().sendUserName(username);
-        testContext.getAuth().getLoginPage().clickonContinueButton();
-        testContext.getAuth().getLoginPage().sendPassword(password);
-        testContext.getAuth().getLoginPage().clickOnSingIn();
-        */
+       testContext.getAuth().getGmailLoginPage().clickOnSignINButton();
+       testContext.getAuth().getGmailLoginPage().giveEmailID(configFileReader.getProps("emailID"));
+       testContext.getAuth().getGmailLoginPage().clickONNext();
+       testContext.getAuth().getGmailLoginPage().givePassword(configFileReader.getProps("password"));
+       testContext.getAuth().getGmailLoginPage().clickONLogin();
     }
+	
+	
 }

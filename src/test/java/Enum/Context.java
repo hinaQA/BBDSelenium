@@ -1,5 +1,8 @@
 package Enum;
 
-public enum Context {
+public enum Context 
+{  
+	EMAILID,
+	PASSWORD;
 
 }

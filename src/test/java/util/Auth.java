@@ -7,8 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import dataProvider.ConfigFileReader;
+import pageModel.GmailLoginPage;
 import pageModel.YouTubePage;
-import pageModel.gmailLoginPage;
 
 public class Auth {
 	public static WebDriver driver = null;
@@ -37,21 +37,29 @@ public class Auth {
     {
         driver.quit();
     }
+    
+    public void implictWait()
+    {
+    	 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+    }
 
     public  WebDriver getWebDriver()
     {
         return driver;
     }
 
-    public gmailLoginPage getgmailLoginPage()
+    public GmailLoginPage getGmailLoginPage()
     {
-        return PageFactory.initElements(driver,gmailLoginPage.class);
+        return PageFactory.initElements(driver,GmailLoginPage.class);
     }
 
     public YouTubePage getYouTubePage()
     {
         return PageFactory.initElements(driver,YouTubePage.class);
     }
+    
+    
+    
 
   
 

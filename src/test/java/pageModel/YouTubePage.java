@@ -10,10 +10,12 @@ import org.openqa.selenium.support.How;
 public class YouTubePage 
 {
 	private WebDriver webdriver;
+	private Actions act;
 
     public YouTubePage(WebDriver driver)
     {
         this.webdriver= driver;
+         act = new Actions(webdriver);
     }
     
     @FindBy(how = How.XPATH,using ="//ytd-topbar-menu-button-renderer[1]//div[1]//a[1]//yt-icon-button[1]//button[1]//yt-icon[1]")
@@ -26,7 +28,7 @@ public class YouTubePage
     @FindBy(how = How.XPATH,using="//a[contains(text(),'new Studio uploader')]")
     WebElement NewStudioSelector;
     
-    @FindBy(how = How.XPATH,using ="//div[contains(text(),'Select file')]")
+    @FindBy(how = How.XPATH,using ="//div[@id='upload-prompt-box']//div//input")
     WebElement selectFile;
     
     @FindBy(how=How.XPATH,using="//span[contains(text(),'Publish')]")
@@ -43,12 +45,15 @@ public class YouTubePage
     }
       
     
-    public void clickOnUpload()
+    public void clickOnUploadVideo()
     {
-      Actions act = new Actions(webdriver);
 	  act.moveToElement(uploadVideo).click().perform();
     }
     
+    public void clickOnUploadFile()
+    {
+    	act.moveToElement(selectFile).click().perform();
+    }
     
 	
 }

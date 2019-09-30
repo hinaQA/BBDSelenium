@@ -7,16 +7,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class gmailLoginPage {
+public class GmailLoginPage {
 	
 	private WebDriver webdriver;
 
-    public gmailLoginPage(WebDriver driver)
+    public GmailLoginPage(WebDriver driver)
     {
         this.webdriver= driver;
     }
     
-	@FindBy(how= How.ID,using="text")
+	@FindBy(how= How.XPATH,using="//ytd-button-renderer[@class='style-scope ytd-masthead style-suggestive size-small']//yt-icon[@class='style-scope ytd-button-renderer']")
 	WebElement signIN;
 
 	@FindBy(how=How.XPATH,using="//input[@id='identifierId']")
@@ -28,7 +28,7 @@ public class gmailLoginPage {
 	@FindBy(how=How.XPATH,using ="//input[@name='password']")
 	WebElement pasword;
 	
-	@FindBy(how=How.XPATH,using="/span[contains(text(),'Next')]")
+	@FindBy(how=How.XPATH,using="//span[contains(text(),'Next')]")
 	WebElement nextButton;
 	
 	
