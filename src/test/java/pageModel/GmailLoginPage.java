@@ -1,6 +1,6 @@
 package pageModel;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,7 +39,7 @@ public class GmailLoginPage {
 	
 	public void giveEmailID(String id)
 	{
-	   emailID.clear();	
+	   //emailID.clear();	
 		emailID.sendKeys(id);
 	}
 	
@@ -50,7 +50,7 @@ public class GmailLoginPage {
 	
 	public void givePassword(String password)
 	{
-		pasword.clear();
+		//pasword.clear();
 		pasword.sendKeys(password);
 	}
 	
@@ -67,6 +67,8 @@ public class GmailLoginPage {
 		    }
 		  }
 	}
+	
+	
 	
 	
 }

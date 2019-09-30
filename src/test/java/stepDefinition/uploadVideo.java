@@ -17,13 +17,13 @@ public class uploadVideo
     @Given("^Login using gmail account$")
     public void login_using_gmail_account() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+    	testContext.getAuth().pageLoad();
     	SeleniumUtil.loginInToGmail(testContext);
     }
 
     @When("^Go to upload video section$")
     public void go_to_upload_video_section() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	testContext.getAuth().implictWait();
     	testContext.getAuth().getYouTubePage().clickOnCreate();
     	testContext.getAuth().getYouTubePage().clickOnUploadVideo();
         
@@ -32,8 +32,8 @@ public class uploadVideo
     @When("^Upload a video$")
     public void upload_a_video() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	testContext.getAuth().implictWait();
     	testContext.getAuth().getYouTubePage().clickOnUploadFile();
+    	
         
     }
 

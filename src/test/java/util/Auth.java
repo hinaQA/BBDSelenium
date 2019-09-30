@@ -47,6 +47,11 @@ public class Auth {
     {
         return driver;
     }
+    
+    public void pageLoad()
+    {
+    	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+    }
 
     public GmailLoginPage getGmailLoginPage()
     {
