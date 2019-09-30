@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
                            "json:target/cucumber/cucumber.json"
                              },
                      features = "src/test/resources/features/",
-                     glue ="StepDefinition"
+                     glue ="stepDefinition"
                 )
 public class Runner {
 }

@@ -27,4 +27,10 @@ public class ConfigFileReader {
     {
         return projectProperties.getProperty("url");
     }
+    
+    public String getProps(String propsName)
+    {
+    	return projectProperties.getProperty(propsName);
+    }
+    
 }
